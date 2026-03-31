@@ -1,0 +1,1595 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Élégance Premium - Vêtements et Accessoires Importés</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    /* HEADER & NAVIGATION */
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover {
+      color: #d4af37;
+      transform: translateY(-3px);
+    }
+
+    .nav-link:hover::before {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: #d4af37;
+    }
+
+    .nav-link.active::before {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      text-align: center;
+      animation: fadeInDown 0.8s ease;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-title {
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 2rem;
+      letter-spacing: 3px;
+      animation: slideInLeft 1s ease;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      animation: slideInRight 1s ease;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .company-story {
+      background: white;
+      border-radius: 15px;
+      padding: 3rem;
+      margin: 3rem auto;
+      max-width: 900px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s ease;
+      line-height: 1.8;
+      color: #555;
+      font-size: 1.05rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .company-story h2 {
+      color: #d4af37;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .company-story p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* HOME GALLERY */
+    .home-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      animation: galleryFade 1.2s ease;
+    }
+
+    .home-gallery .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .home-gallery .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform .8s ease;
+    }
+
+    .home-gallery .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .home-gallery .gallery-item .caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      font-size: 1rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all .4s ease;
+    }
+
+    .home-gallery .gallery-item:hover .caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes galleryFade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* PRODUCTS SECTION */
+    .products-section {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 3rem;
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%);
+      border-radius: 2px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      animation: fadeInUp 0.6s ease;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+    }
+
+    .product-image-container {
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image-container img {
+      transform: scale(1.1);
+    }
+
+    .product-image-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .product-card:hover .product-image-container::after {
+      left: 100%;
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-price {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .product-description {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .btn-buy {
+      width: 100%;
+      padding: 0.9rem;
+      background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-buy:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-buy:active {
+      transform: scale(0.98);
+    }
+
+    .btn-appointment {
+      width: 100%;
+      padding: 0.9rem;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.5rem;
+    }
+
+    .btn-appointment:hover {
+      background: #555;
+      transform: scale(1.05);
+    }
+
+    .btn-appointment:active {
+      transform: scale(0.98);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      position: relative;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 600px;
+      width: 90%;
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .lightbox-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .lightbox-info {
+      text-align: center;
+    }
+
+    .lightbox-info h3 {
+      color: #333;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .lightbox-info p {
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .lightbox-price {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+    }
+
+    .lightbox-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .close-lightbox:hover {
+      color: #d4af37;
+    }
+
+    /* APPOINTMENT FORM */
+    .appointment-form {
+      display: none;
+      position: fixed;
+      z-index: 2500;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      animation: fadeIn 0.3s ease;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .appointment-form.active {
+      display: flex;
+    }
+
+    .appointment-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 90%;
+      animation: zoomIn 0.3s ease;
+    }
+
+    .appointment-content h3 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .appointment-content form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .appointment-content input,
+    .appointment-content select {
+      padding: 0.8rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .appointment-content input:focus,
+    .appointment-content select:focus {
+      border-color: #d4af37;
+      box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
+    }
+
+    .appointment-content button {
+      padding: 0.9rem;
+      background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .appointment-content button:hover {
+      transform: scale(1.05);
+    }
+
+    .close-appointment {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .close-appointment:hover {
+      color: #d4af37;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 5rem;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* PAGE SYSTEM */
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-menu {
+        gap: 1.5rem;
+      }
+
+      .nav-link {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .animated-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .company-story {
+        padding: 2rem;
+        font-size: 0.95rem;
+      }
+
+      .home-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .lightbox-content {
+        width: 95%;
+        padding: 1.5rem;
+      }
+
+      .lightbox-buttons {
+        flex-direction: column;
+      }
+
+      .appointment-content {
+        width: 95%;
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 0 1rem;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .nav-menu {
+        gap: 1rem;
+      }
+
+      .nav-link {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.5rem;
+      }
+
+      .animated-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+
+      .company-story {
+        padding: 1.5rem;
+        font-size: 0.85rem;
+      }
+
+      .home-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-content {
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .close-lightbox {
+        top: -30px;
+        font-size: 1.5rem;
+      }
+
+      .appointment-content {
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .close-appointment {
+        top: -30px;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">ÉLÉGANCE PREMIUM</div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#home" class="nav-link active" data-page="home">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a href="#products" class="nav-link" data-page="products">Produits</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link" data-page="about">À Propos</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link" data-page="contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="app">
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+      <div class="hero">
+        <h1 class="animated-title">ÉLÉGANCE PREMIUM</h1>
+        <p class="hero-subtitle">Vêtements et Accessoires Importés Directement de France</p>
+
+        <div class="company-story">
+          <h2>Notre Histoire</h2>
+          <p>
+            Élégance Premium est née en 2010 d'une passion pour la mode française et l'excellence. 
+            Depuis plus de dix ans, nous nous engageons à apporter les plus beaux vêtements et accessoires 
+            directement de France vers vous, avec la garantie de qualité et d'authenticité.
+          </p>
+          <p>
+            Notre équipe sélectionne avec soin chaque pièce dans les plus prestigieuses collections françaises. 
+            Des vêtements pour femmes et hommes, en passant par la lingerie fine, les chaussures élégantes, 
+            les lunettes de luxe et les vêtements pour enfants - tout est choisi pour vous offrir le meilleur 
+            de la mode parisienne.
+          </p>
+          <p>
+            Chez Élégance Premium, nous croyons que tout le monde mérite d'avoir accès à la beauté, 
+            au confort et au style français. C'est notre promesse, notre engagement envers vous.
+          </p>
+        </div>
+      </div>
+
+      <div class="home-gallery">
+        <div class="gallery-item">
+          <img src="Coffee Because Murder Is Wrong Black Cat Drinks Coffee Funny T-Shirt Oversized Hip Hop T Shirt Cotton Tops Short Sleeves Clothes - Red _ XXL.jpg" alt="Photo de la collection femme">
+          <div class="caption">Collection Femme</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Shop Shirts at Johnston & Murphy.jpg" alt="Photo de la collection homme">
+          <div class="caption">Collection Homme</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Kleine Mädchen Lässig 2-in-1 Set mit Hemdkragen, bedrucktem Vorderteil, gerippten Manschetten und Sweatshirt, kombiniert mit elastischer Taille, vintage kariertem Plisseerock, Herbst_Winter.jpg" alt="Photo accessoires et enfants">
+          <div class="caption">Accessoires & Enfants</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS PAGE -->
+    <div id="products" class="page">
+      <div class="hero">
+        <h1 class="animated-title">NOS PRODUITS</h1>
+        <p class="hero-subtitle">Découvrez notre collection exclusive</p>
+      </div>
+
+      <!-- VÊTEMENTS POUR FEMMES -->
+      <section class="products-section">
+        <h2 class="section-title">Vêtements pour Femmes</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="GRACE KARIN Femme Travail Robe de Soirée Cocktail Sexy à Manches Courtes Col en V Crayon.jpg" alt="Robe Femme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Robe Élégante</h3>
+              <p class="product-price">59 000 FCFA</p>
+              <p class="product-description">Robe fluide et sophistiquée en tissu premium</p>
+              <button class="btn-buy" onclick="openLightbox('Robe Élégante', '59 000 FCFA', 'Robe fluide et sophistiquée en tissu premium', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Snazzy Satin Button Decorated Shirt in Pink.jpg" alt="Blouse Femme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Blouse Chic</h3>
+              <p class="product-price">40 000 FCFA</p>
+              <p class="product-description">Blouse en soie naturelle avec détails brodés</p>
+              <button class="btn-buy" onclick="openLightbox('Blouse Chic', '40 000 FCFA', 'Blouse en soie naturelle avec détails brodés', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="SDWRJOP Womens Wrinkle Free Shirts Button Down Blouse Long Sleeve Ladies Office Dress Shirt.jpg" alt="Chemise Femme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Chemise Classique</h3>
+              <p class="product-price">35 000 FCFA</p>
+              <p class="product-description">Chemise intemporelle en coton biologique</p>
+              <button class="btn-buy" onclick="openLightbox('Chemise Classique', '35 000 FCFA', 'Chemise intemporelle en coton biologique', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Vestidos elegantes y sexys de gasa sin tirantes para fiesta de noche y baile, para mujer, verano, largos, formales, para boda, fiesta, novia, presentadora, con cola, vestidos.jpg" alt="Robe Femme 2">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Robe Soirée</h3>
+              <p class="product-price">80 000 FCFA</p>
+              <p class="product-description">Robe de soirée avec détails perlés</p>
+              <button class="btn-buy" onclick="openLightbox('Robe Soirée', '80 000 FCFA', 'Robe de soirée avec détails perlés', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="télécharger (1).jpg" alt="Veste Femme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Veste Tendance</h3>
+              <p class="product-price">50 000 FCFA</p>
+              <p class="product-description">Veste de très bonne qualité, légère et confortable</p>
+              <button class="btn-buy" onclick="openLightbox('Veste Tendance', '50 000 FCFA', 'Veste de très bonne qualité, légère et confortable', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="télécharger (2).jpg" alt="Pantalon Femme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Pantalon Chic</h3>
+              <p class="product-price">45 000 FCFA</p>
+              <p class="product-description">Pantalon en tissu stretch très confortable</p>
+              <button class="btn-buy" onclick="openLightbox('Pantalon Chic', '45 000 FCFA', 'Pantalon en tissu stretch très confortable', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VÊTEMENTS POUR HOMMES -->
+      <section class="products-section">
+        <h2 class="section-title">Vêtements pour Hommes</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Conjunto de Terno de Casamento Masculino Roupa de Festa_ Jaqueta + Calça + Colete, Conjunto de Terno Masculino Slim Fit Tuxedo, Blazer Personalizado de Estilo Britânico para Noivo.jpg" alt="Costume Homme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Costume Elegant</h3>
+              <p class="product-price">160 000 FCFA</p>
+              <p class="product-description">Costume ajusté en laine premium</p>
+              <button class="btn-buy" onclick="openLightbox('Costume Elegant', '160 000 FCFA', 'Costume ajusté en laine premium', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Camisa informal de manga larga para hombre, ropa de vestir clásica a rayas, de negocios, talla grande M- 5XL, 2024 - AliExpress 200000343.jpg" alt="Chemise Homme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Chemise Homme</h3>
+              <p class="product-price">40 000 FCFA</p>
+              <p class="product-description">Chemise Oxford avec coupes classiques</p>
+              <button class="btn-buy" onclick="openLightbox('Chemise Homme', '40 000 FCFA', 'Chemise Oxford avec coupes classiques', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="télécharger (3).jpg" alt="Pantalon Homme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Pantalon Premium</h3>
+              <p class="product-price">52 000 FCFA</p>
+              <p class="product-description">Pantalon en tissu stretch confortable</p>
+              <button class="btn-buy" onclick="openLightbox('Pantalon Premium', '52 000 FCFA', 'Pantalon en tissu stretch confortable', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="MOGU Mens 3 Piece Slim Fit Plaid Suit Blazer+Vest+Pants.jpg" alt="Veste Homme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Veste Blazer</h3>
+              <p class="product-price">90 000 FCFA</p>
+              <p class="product-description">Veste blazer élégante et intemporelle</p>
+              <button class="btn-buy" onclick="openLightbox('Veste Blazer', '90 000 FCFA', 'Veste blazer élégante et intemporelle', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Ralph Lauren Polo.jpg" alt="Polo Homme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Polo Classique</h3>
+              <p class="product-price">29 000 FCFA</p>
+              <p class="product-description">Polo en coton pur très confortable</p>
+              <button class="btn-buy" onclick="openLightbox('Polo Classique', '29 000 FCFA', 'Polo en coton pur très confortable', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Lomi Bae.jpg" alt="T-shirt Homme 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">T-shirt Premium</h3>
+              <p class="product-price">20 000 FCFA</p>
+              <p class="product-description">T-shirt en coton biologique haute qualité</p>
+              <button class="btn-buy" onclick="openLightbox('T-shirt Premium', '20 000 FCFA', 'T-shirt en coton biologique haute qualité', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LINGERIE -->
+      <section class="products-section">
+        <h2 class="section-title">Lingerie</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Yiiquan Femme 2 Pièces Ensemble de Soutien-Gorge Floral Dentelle Push Up Bra en Demi-Tasse et Culotte (Rouge, 95C).jpg" alt="Lingerie 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Ensemble Lingerie</h3>
+              <p class="product-price">45 000 FCFA</p>
+              <p class="product-description">Ensemble en dentelle fine et soie</p>
+              <button class="btn-buy" onclick="openLightbox('Ensemble Lingerie', '45 000 FCFA', 'Ensemble en dentelle fine et soie', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="3pcs_Set Lace Wireless Bras For Women, Valentine's Day.jpg" alt="Lingerie 2">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Soutien-Gorge</h3>
+              <p class="product-price">35 000 FCFA</p>
+              <p class="product-description">Soutien-gorge confortable et élégant</p>
+              <button class="btn-buy" onclick="openLightbox('Soutien-Gorge', '35 000 FCFA', 'Soutien-gorge confortable et élégant', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="télécharger (4).jpg" alt="Lingerie 3">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Culote Premium</h3>
+              <p class="product-price">25 000 FCFA</p>
+              <p class="product-description">Culote en dentelle avec finitions délicates</p>
+              <button class="btn-buy" onclick="openLightbox('Culote Premium', '25 000 FCFA', 'Culote en dentelle avec finitions délicates', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="2 pezzi Set pigiama casual e comodo per ragazze adolescenti, composto da cardigan in satin a quadri elegante e pantaloni, con fiocco.jpg" alt="Lingerie 4">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Pyjama Soie</h3>
+              <p class="product-price">60 000 FCFA</p>
+              <p class="product-description">Pyjama en pure soie naturelle</p>
+              <button class="btn-buy" onclick="openLightbox('Pyjama Soie', '60 000 FCFA', 'Pyjama en pure soie naturelle', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Lace body.jpg" alt="Lingerie 5">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Body Dentelle</h3>
+              <p class="product-price">40 000 FCFA</p>
+              <p class="product-description">Body en dentelle avec détails sophistiqués</p>
+              <button class="btn-buy" onclick="openLightbox('Body Dentelle', '40 000 FCFA', 'Body en dentelle avec détails sophistiqués', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="télécharger (5).jpg" alt="Lingerie 6">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Chemise Nuit</h3>
+              <p class="product-price">48 000 FCFA</p>
+              <p class="product-description">Chemise de nuit en satin luxueux</p>
+              <button class="btn-buy" onclick="openLightbox('Chemise Nuit', '48 000 FCFA', 'Chemise de nuit en satin luxueux', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAUSSURES -->
+      <section class="products-section">
+        <h2 class="section-title">Chaussures</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Kazar NATALIE - Klasszikus sarkú cipők - beige.jpg" alt="Escarpins 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Escarpins Classiques</h3>
+              <p class="product-price">65 000 FCFA</p>
+              <p class="product-description">Escarpins en cuir véritable</p>
+              <button class="btn-buy" onclick="openLightbox('Escarpins Classiques', '65 000 FCFA', 'Escarpins en cuir véritable', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Chaussures à Talons Hauts et Escarpins pour Femme _ Simons.jpg" alt="Bottines 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Bottines Élégantes</h3>
+              <p class="product-price">78 000 FCFA</p>
+              <p class="product-description">Bottines en cuir avec doublure confortable</p>
+              <button class="btn-buy" onclick="openLightbox('Bottines Élégantes', '78 000 FCFA', 'Bottines en cuir avec doublure confortable', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Breakj Chessboard Canvas Shoes for Women Casual Sneakers Ladies Walking Shoes Slip on Loafers Sport Shoes Baskets Femme Compensées 792Khaki-44.jpg" alt="Sneakers 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sneakers Chic</h3>
+              <p class="product-price">41 000 FCFA</p>
+              <p class="product-description">Sneakers blanches minimalistes</p>
+              <button class="btn-buy" onclick="openLightbox('Sneakers Chic', '41 000 FCFA', 'Sneakers blanches minimalistes', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Comwarm Fashion Women's Suede Mules Slippers Men Clogs Cork Insole Sandals With Arch Support Outdoor Beach Slides Home Shoes - Apricot C _ 37.jpg" alt="Sandales 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sandales Confort</h3>
+              <p class="product-price">36 000 FCFA</p>
+              <p class="product-description">Sandales en cuir avec soutien optimal</p>
+              <button class="btn-buy" onclick="openLightbox('Sandales Confort', '36 000 FCFA', 'Sandales en cuir avec soutien optimal', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Men's Casual Shoes for Sale - eBay.jpg" alt="Mocassins 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Mocassins Hommes</h3>
+              <p class="product-price">58 000 FCFA</p>
+              <p class="product-description">Mocassins italiens très confortables</p>
+              <button class="btn-buy" onclick="openLightbox('Mocassins Hommes', '58 000 FCFA', 'Mocassins italiens très confortables', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="120mm Women's Wedding Party Heels Classic Color Red Bottom Patent Pumps Black-US10.jpg" alt="Talons 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Talons Hauts</h3>
+              <p class="product-price">72 000 FCFA</p>
+              <p class="product-description">Talons hauts élégants en satin</p>
+              <button class="btn-buy" onclick="openLightbox('Talons Hauts', '72 000 FCFA', 'Talons hauts élégants en satin', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACCESSOIRES & LUNETTES -->
+      <section class="products-section">
+        <h2 class="section-title">Accessoires & Lunettes</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="1pair Men Rivet Detail Square Frame Fashion Glasses Black Sunglasses For Daily Life Summer Cool Outdoor Travel Back To School UV400 Clothing Accessories.jpg" alt="Lunettes 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Lunettes Soleil</h3>
+              <p class="product-price">85 000 FCFA</p>
+              <p class="product-description">Lunettes de soleil design français</p>
+              <button class="btn-buy" onclick="openLightbox('Lunettes Soleil', '85 000 FCFA', 'Lunettes de soleil design français', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Letter Embossed Square Bag.jpg" alt="Sac 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sac à Main Chic</h3>
+              <p class="product-price">95 000 FCFA</p>
+              <p class="product-description">Sac à main en cuir véritable</p>
+              <button class="btn-buy" onclick="openLightbox('Sac à Main Chic', '95 000 FCFA', 'Sac à main en cuir véritable', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Save📌 follow.jpg" alt="Portefeuille 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Portefeuille Cuir</h3>
+              <p class="product-price">36 000 FCFA</p>
+              <p class="product-description">Portefeuille en cuir italien premium</p>
+              <button class="btn-buy" onclick="openLightbox('Portefeuille Cuir', '36 000 FCFA', 'Portefeuille en cuir italien premium', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Longwu Lot de 2_3 ceintures en cuir pour pantalons jeans, ceintures en cuir tendance pour femme avec boucle dorée.jpg" alt="Ceinture 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Ceinture Habillée</h3>
+              <p class="product-price">28 000 FCFA</p>
+              <p class="product-description">Ceinture en cuir habillée</p>
+              <button class="btn-buy" onclick="openLightbox('Ceinture Habillée', '28 000 FCFA', 'Ceinture en cuir habillée', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="télécharger (8).jpg" alt="Montre 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Montre Élégante</h3>
+              <p class="product-price">130 000 FCFA</p>
+              <p class="product-description">Montre intemporelle très élégante</p>
+              <button class="btn-buy" onclick="openLightbox('Montre Élégante', '130 000 FCFA', 'Montre intemporelle très élégante', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="télécharger (6).jpg" alt="Écharpe 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Écharpe Soie</h3>
+              <p class="product-price">49 000 FCFA</p>
+              <p class="product-description">Écharpe en pure soie naturelle</p>
+              <button class="btn-buy" onclick="openLightbox('Écharpe Soie', '49 000 FCFA', 'Écharpe en pure soie naturelle', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VÊTEMENTS POUR ENFANTS -->
+      <section class="products-section">
+        <h2 class="section-title">Vêtements pour Enfants</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Relógio masculino de quartzo ponteiro redondo.jpg" alt="Robe Enfant 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Robe Fille</h3>
+              <p class="product-price">29 000 FCFA</p>
+              <p class="product-description">Robe élégante pour petite fille</p>
+              <button class="btn-buy" onclick="openLightbox('Robe Fille', '29 000 FCFA', 'Robe élégante pour petite fille', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="LOLANTA 2 Pièces Costume Mariage Garçon en Lin, Ensemble Veste Cintrée et Pantalon Costume Formel Enfant pour Baptême, Cérémonie, Bal, Fête.jpg" alt="Costume Enfant 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Costume Garçon</h3>
+              <p class="product-price">45 000 FCFA</p>
+              <p class="product-description">Costume pour petits garçons très chic</p>
+              <button class="btn-buy" onclick="openLightbox('Costume Garçon', '45 000 FCFA', 'Costume pour petits garçons très chic', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Camisa Linho Manga Curta.jpg" alt="Chemise Enfant 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Chemise Enfant</h3>
+              <p class="product-price">21 000 FCFA</p>
+              <p class="product-description">Chemise en coton pur très confortable</p>
+              <button class="btn-buy" onclick="openLightbox('Chemise Enfant', '21 000 FCFA', 'Chemise en coton pur très confortable', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Jeans Slim classiques et confortables pour garçons, pantalons longs en Denim pour enfants, pantalons.jpg" alt="Pantalon Enfant 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Pantalon Enfant</h3>
+              <p class="product-price">26 000 FCFA</p>
+              <p class="product-description">Pantalon confortable et ludique pour enfants</p>
+              <button class="btn-buy" onclick="openLightbox('Pantalon Enfant', '26 000 FCFA', 'Pantalon confortable et ludique pour enfants', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Jungen Lässige Gesteppte Strukturierte Retro Diamant Baseball Jacke.jpg" alt="Veste Enfant 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Veste Enfant</h3>
+              <p class="product-price">35 000 FCFA</p>
+              <p class="product-description">Veste chaude et élégante pour enfants</p>
+              <button class="btn-buy" onclick="openLightbox('Veste Enfant', '35 000 FCFA', 'Veste chaude et élégante pour enfants', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Young Boy 3pcs Solid Round Neck Tee.jpg" alt="T-shirt Enfant 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">T-shirt Enfant</h3>
+              <p class="product-price">16 000 FCFA</p>
+              <p class="product-description">T-shirt coloré en coton biologique doux</p>
+              <button class="btn-buy" onclick="openLightbox('T-shirt Enfant', '16 000 FCFA', 'T-shirt coloré en coton biologique doux', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- JOUETS POUR ENFANTS -->
+      <section class="products-section">
+        <h2 class="section-title">Jouets pour Enfants</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Деревянные игрушки_ безопасны и удобны для детей.jpg" alt="Jouet 1">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Jouet Éducatif</h3>
+              <p class="product-price">22 000 FCFA</p>
+              <p class="product-description">Jouet de développement pour enfants</p>
+              <button class="btn-buy" onclick="openLightbox('Jouet Éducatif', '22 000 FCFA', 'Jouet de développement pour enfants', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Wagner 9048 – Géant XXL Ours Marron 100 cm en Peluche Doudou Teddy dans Beige.jpg" alt="Jouet 2">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Peluche Douce</h3>
+              <p class="product-price">16 000 FCFA</p>
+              <p class="product-description">Peluche en coton bio très douce</p>
+              <button class="btn-buy" onclick="openLightbox('Peluche Douce', '16 000 FCFA', 'Peluche en coton bio très douce', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Casse-tête en bois pour tout-petits, casse-tête alphabet et casse-tête numérique, casse-tête d'apprentissage éducatif préscolaire pour enfants et tout-petits.jpg" alt="Jouet 3">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Puzzle Enfant</h3>
+              <p class="product-price">13 000 FCFA</p>
+              <p class="product-description">Puzzle éducatif pour stimuler l'esprit</p>
+              <button class="btn-buy" onclick="openLightbox('Puzzle Enfant', '13 000 FCFA', 'Puzzle éducatif pour stimuler l\'esprit', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Sac de briques - 120 pieces des 18 mois - Abrick.jpg" alt="Jouet 4">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Jeu de Construction</h3>
+              <p class="product-price">29 000 FCFA</p>
+              <p class="product-description">Blocs de construction colorés et sûrs</p>
+              <button class="btn-buy" onclick="openLightbox('Jeu de Construction', '29 000 FCFA', 'Blocs de construction colorés et sûrs', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="21 jouets Montessori pour stimuler le développement de bébé.jpg" alt="Jouet 5">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Jouet Sensoriel</h3>
+              <p class="product-price">19 000 FCFA</p>
+              <p class="product-description">Jouet pour stimuler tous les sens</p>
+              <button class="btn-buy" onclick="openLightbox('Jouet Sensoriel', '19 000 FCFA', 'Jouet pour stimuler tous les sens', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              <img src="Stories of the prophets board books.jpg" alt="Jouet 6">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Livre Enfant</h3>
+              <p class="product-price">9 000 FCFA</p>
+              <p class="product-description">Livre illustré pour l'apprentissage ludique</p>
+              <button class="btn-buy" onclick="openLightbox('Livre Enfant', '9 000 FCFA', 'Livre illustré pour l\'apprentissage ludique', this.parentElement.parentElement.querySelector('img').src)">Voir Détails</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+      <div class="hero">
+        <h1 class="animated-title">À PROPOS DE NOUS</h1>
+        <p class="hero-subtitle">Qui nous sommes et ce qui nous définit</p>
+      </div>
+
+      <section class="products-section" style="background: white; border-radius: 15px; padding: 2rem; margin-top: 2rem; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); animation: fadeInUp 0.8s ease;">
+        <h2 style="color: #d4af37; text-shadow: none; font-size: 2rem; margin-bottom: 1.5rem;">Nos Valeurs</h2>
+        <div class="products-grid" style="margin-top: 2rem;">
+          <div class="product-card" style="cursor: default;">
+            <div class="product-image-container" style="background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%); color: white; font-size: 3rem; font-weight: bold;">QUALITÉ</div>
+            <div class="product-info">
+              <h3 class="product-name">Qualité Supérieure</h3>
+              <p class="product-description">Tous nos produits sont sélectionnés avec soin et certifiés de haute qualité. Aucun compromis sur l'excellence.</p>
+            </div>
+          </div>
+
+          <div class="product-card" style="cursor: default;">
+            <div class="product-image-container" style="background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%); color: white; font-size: 3rem; font-weight: bold;">AUTHENTICITÉ</div>
+            <div class="product-info">
+              <h3 class="product-name">100% Authentique</h3>
+              <p class="product-description">Chaque pièce vient directement de France et est garantie authentique. Transparence totale sur l'origine.</p>
+            </div>
+          </div>
+
+          <div class="product-card" style="cursor: default;">
+            <div class="product-image-container" style="background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%); color: white; font-size: 3rem; font-weight: bold;">SERVICE</div>
+            <div class="product-info">
+              <h3 class="product-name">Service Client</h3>
+              <p class="product-description">Notre équipe est disponible pour vous aider et répondre à toutes vos questions avec bienveillance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+      <div class="hero">
+        <h1 class="animated-title">NOUS CONTACTER</h1>
+        <p class="hero-subtitle">Nous sommes toujours là pour vous aider</p>
+      </div>
+
+      <section class="products-section" style="background: white; border-radius: 15px; padding: 2rem; max-width: 600px; margin-top: 2rem; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); animation: fadeInUp 0.8s ease;">
+        <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="display: flex; flex-direction: column;">
+            <label style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">Nom</label>
+            <input type="text" name="user_name" placeholder="Votre nom" required style="padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease;" 
+            onfocus="this.style.borderColor='#d4af37'; this.style.boxShadow='0 0 0 3px rgba(212,175,55,0.1)'" 
+            onblur="this.style.borderColor='#ddd'; this.style.boxShadow='none'">
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <label style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">Email</label>
+            <input type="email" name="user_email" placeholder="faroucktundeadekambi@gmail.com" required style="padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease;" 
+            onfocus="this.style.borderColor='#d4af37'; this.style.boxShadow='0 0 0 3px rgba(212,175,55,0.1)'" 
+            onblur="this.style.borderColor='#ddd'; this.style.boxShadow='none'">
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <label style="color: #333; font-weight: 600; margin-bottom: 0.5rem;">Message</label>
+            <textarea name="message" placeholder="Votre message..." rows="5" required style="padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; font-family: 'Poppins', sans-serif; transition: all 0.3s ease;" 
+            onfocus="this.style.borderColor='#d4af37'; this.style.boxShadow='0 0 0 3px rgba(212,175,55,0.1)'" 
+            onblur="this.style.borderColor='#ddd'; this.style.boxShadow='none'"></textarea>
+          </div>
+
+          <button type="submit" class="btn-buy" style="margin-top: 1rem;">Envoyer le Message</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #eee;">
+          <h3 style="color: #333; margin-bottom: 1rem;">Autres Moyens de Nous Contacter</h3>
+          <p style="color: #666; margin: 0.5rem 0;">Téléphone: +229 0152838253</p>
+          <p style="color: #666; margin: 0.5rem 0;">Email: faroucktundeadekambi@gmail.com</p>
+          <p style="color: #666; margin: 0.5rem 0;">Adresse: 123 Avenue des Champs-Élysées, 75008 Paris</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- LIGHTBOX FOR PRODUCT DETAILS -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-image" src="" alt="Produit" class="lightbox-image">
+      <div class="lightbox-info">
+        <h3 id="lightbox-name"></h3>
+        <p id="lightbox-description"></p>
+        <p class="lightbox-price" id="lightbox-price"></p>
+        <div class="lightbox-buttons">
+          <button class="btn-buy" onclick="orderOnline()">Commander en Ligne</button>
+          <button class="btn-appointment" onclick="openAppointmentForm()">Prendre Rendez-vous</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPOINTMENT FORM -->
+  <div id="appointment-form" class="appointment-form">
+    <div class="appointment-content">
+      <span class="close-appointment" onclick="closeAppointmentForm()">&times;</span>
+      <h3>Prendre Rendez-vous</h3>
+      <form onsubmit="handleAppointmentForm(event)">
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Votre email" required>
+        <input type="tel" placeholder="Votre téléphone" required>
+        <input type="date" required min="2024-01-01">
+        <select required>
+          <option value="">Choisir une heure</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+        </select>
+        <textarea placeholder="Message (optionnel)" rows="3"></textarea>
+        <button type="submit">Confirmer le Rendez-vous</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Élégance Premium. Tous droits réservés.</p>
+    <p>Vêtements et Accessoires Importés Directement de France | Qualité Premium Garantie</p>
+  </footer>
+
+  <!-- EmailJS Library -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Navigation active
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = document.querySelectorAll('.page');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        pages.forEach(page => page.classList.remove('active'));
+
+        const pageId = link.getAttribute('data-page');
+        document.getElementById(pageId).classList.add('active');
+      });
+    });
+
+    // Initialize EmailJS with your public key (replace with your actual key)
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY"); // Remplacez par votre clé publique EmailJS
+    })();
+
+    // Contact form with EmailJS
+    function handleContactForm(event) {
+      event.preventDefault();
+      
+      // Send email using EmailJS
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', '#contact-form')
+        .then(function() {
+          alert('Merci pour votre message ! Nous vous répondrons bientôt.');
+          event.target.reset();
+        }, function(error) {
+          alert('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+          console.log('FAILED...', error);
+        });
+    }
+
+    // Attach event listener to form
+    document.getElementById('contact-form').addEventListener('submit', handleContactForm);
+
+    // Lightbox functions
+    function openLightbox(name, price, description, image) {
+      document.getElementById('lightbox-image').src = image;
+      document.getElementById('lightbox-name').textContent = name;
+      document.getElementById('lightbox-price').textContent = price;
+      document.getElementById('lightbox-description').textContent = description;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    // Order online function
+    function orderOnline() {
+      alert('Merci pour votre commande ! Vous recevrez un email de confirmation sous peu.');
+      closeLightbox();
+    }
+
+    // Appointment form functions
+    function openAppointmentForm() {
+      document.getElementById('appointment-form').classList.add('active');
+    }
+
+    function closeAppointmentForm() {
+      document.getElementById('appointment-form').classList.remove('active');
+    }
+
+    function handleAppointmentForm(event) {
+      event.preventDefault();
+      alert('Votre rendez-vous a été pris ! Nous vous contacterons pour confirmer.');
+      event.target.reset();
+      closeAppointmentForm();
+      closeLightbox();
+    }
+
+    // Close lightbox on outside click
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox') {
+        closeLightbox();
+      }
+    });
+
+    // Close appointment form on outside click
+    document.getElementById('appointment-form').addEventListener('click', (e) => {
+      if (e.target.id === 'appointment-form') {
+        closeAppointmentForm();
+      }
+    });
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        closeAppointmentForm();
+      }
+    });
+  </script>
+</body>
+</html>
